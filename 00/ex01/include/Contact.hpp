@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 22:30:30 by padam             #+#    #+#             */
-/*   Updated: 2024/05/02 23:22:34 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/03 12:50:51 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Contact
 		std::string	nickname_;
 		std::string	phone_number_;
 		std::string	darkest_secret_;
-		int			index_;
 		std::string	getInput_(std::string input_name);
 	public:
 		Contact(void);
@@ -31,7 +30,6 @@ class Contact
 		void    set_vars(void);
 		void    view_full(int index);
 		void    view_short(int index);
-		void    setIndex(int i);
 };
 
 #endif

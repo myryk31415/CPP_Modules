@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 22:16:36 by padam             #+#    #+#             */
-/*   Updated: 2024/05/03 13:17:04 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/03 14:19:31 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ std::string	Contact::getInput_(std::string input_name)
 	std::string	input;
 
 	prompt = "Please enter your " + input_name + ": ";
-	std::cout << prompt;
 	do {
+		std::cout << prompt;
 		std::getline(std::cin, input);
 		if (input.empty())
 			std::cout << "Invalid input." << std::endl;

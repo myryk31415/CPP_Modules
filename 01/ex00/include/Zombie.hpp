@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:32:40 by padam             #+#    #+#             */
-/*   Updated: 2024/05/05 22:31:29 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/06 00:29:42 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ class	Zombie {
 
 void	randomChump(std::string name);
 Zombie	*newZombie(std::string name);
+
 #endif

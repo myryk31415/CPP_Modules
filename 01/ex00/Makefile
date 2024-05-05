@@ -6,21 +6,19 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/05/01 23:24:11 by padam            ###   ########.fr        #
+#    Updated: 2024/05/05 22:30:28 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = philo
-
-CC = cc
-CFLAGS = -g -pthread -Wall -Wextra -Werror $(INCLUDES)
-INCLUDES = -I./includes
+NAME = zombie
+CC = c++
+CFLAGS = -std=c++98 -Wall -Wextra -Werror -I./include
 
 SRC_PATH = src
 OBJ_PATH = obj
 
-SRCS = libft_utils.c main.c philo_actions.c philosopher.c utils.c utils2.c
-OBJ_NAME = $(SRCS:.c=.o)
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+OBJ_NAME = $(SRCS:.cpp=.o)
 OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
 all: $(NAME)
@@ -31,7 +29,7 @@ $(NAME): $(OBJS)
 $(OBJ_PATH)	:
 	mkdir -p $(OBJ_PATH)
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp | $(OBJ_PATH)
 	printf "%-50s\r" "$(CC) $@"
 	$(CC) $(CFLAGS) -o $@ -c $<
 
@@ -45,4 +43,4 @@ re: fclean all
 
 bonus: all
 
-.PHONY: all, $(OBJ_PATH), clean, fclean, re, bonus
+.PHONY: all $(OBJ_PATH) clean fclean re bonus

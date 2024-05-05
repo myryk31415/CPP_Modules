@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/02 21:37:06 by padam            ###   ########.fr       */
+/*   Created: 2024/05/02 21:24:07 by padam             #+#    #+#             */
+/*   Updated: 2024/05/05 22:24:25 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void) {
-	return (0);
-}
+Zombie::Zombie(std::string name) {
+	this->name = name;
+};
+
+Zombie::~Zombie(void) {
+	std::cout << this->name << std::endl;
+};
+
+void	Zombie::announce(void) {
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+};

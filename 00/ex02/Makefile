@@ -6,18 +6,18 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/05/03 13:03:25 by padam            ###   ########.fr        #
+#    Updated: 2024/05/05 18:27:28 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = accounts
 CC = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror -I./include
 
 SRC_PATH = src
 OBJ_PATH = obj
 
-SRCS = main.cpp		PhoneBook.cpp	Contact.cpp
+SRCS = tests.cpp	Account.cpp
 OBJ_NAME = $(SRCS:.cpp=.o)
 OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 

@@ -1,9 +1,11 @@
 
 *test*
+./.vscode/*
 
 #programs
 megaphone
 phonebook
+accounts
 
 
 # Prerequisites

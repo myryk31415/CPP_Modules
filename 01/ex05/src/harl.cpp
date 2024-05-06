@@ -6,11 +6,19 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 02:02:29 by padam             #+#    #+#             */
-/*   Updated: 2024/05/06 13:22:54 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/06 16:02:24 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "harl.hpp"
+#include "Harl.hpp"
+
+Harl::Harl(void)
+{
+}
+
+Harl::~Harl(void)
+{
+}
 
 void	Harl::debug(void)
 {

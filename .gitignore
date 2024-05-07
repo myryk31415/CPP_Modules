@@ -2,6 +2,7 @@
 *test*
 .vscode/*
 *.log
+*vgcore*
 
 #programs
 megaphone
@@ -14,6 +15,7 @@ basicallySed
 harl
 harlfilter
 fixedPointNumbers
+
 
 # Prerequisites
 *.d

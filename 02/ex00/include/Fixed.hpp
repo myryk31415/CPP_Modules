@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 01:25:36 by padam             #+#    #+#             */
-/*   Updated: 2024/05/07 02:01:45 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/07 16:58:48 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 
 #include <iostream>
 
-class	Harl
+class	Fixed
 {
 	private:
-		void	debug(void);
-		void	info(void);
-		void	warning(void);
-		void	error(void);
+		int					_rawBits;
+		static const int	_fractionalBits = 8;
 	public:
-		Harl(void);
-		~Harl(void);
-		void	complain( std::string level );
-};
+		Fixed(void);
+		Fixed(const Fixed &src);
+		Fixed()
+		~Fixed(void);
+
+		Fixed	&operator=(const Fixed &rhs);
+
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+}
 
 #endif

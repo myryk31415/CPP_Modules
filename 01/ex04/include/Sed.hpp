@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sed.hpp                                            :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 01:25:36 by padam             #+#    #+#             */
-/*   Updated: 2024/05/06 12:55:51 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/07 17:02:25 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,15 @@
 
 #include <iostream>
 #include <fstream>
-using namespace std;
 
 class	Sed
 {
 	private:
-		string	_in_file;
-		string	_out_file;
+		std::string	_in_file;
+		std::string	_out_file;
 	public:
-		Sed(string in_file);
-		void	replace(string s1, string s2);
+		Sed(std::string in_file);
+		void	replace(std::string s1, std::string s2);
 };
 
 #endif

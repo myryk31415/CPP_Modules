@@ -1,6 +1,6 @@
 
 *test*
-.vscode/*
+*.vscode*
 *.log
 *vgcore*
 
@@ -15,7 +15,7 @@ basicallySed
 harl
 harlfilter
 fixedPointNumbers
-
+bsp
 
 # Prerequisites
 *.d

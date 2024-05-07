@@ -6,11 +6,11 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/05/07 02:02:12 by padam            ###   ########.fr        #
+#    Updated: 2024/05/07 19:50:22 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harlfilter
+NAME = fixedPointNumbers
 CC = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror -I./include
 

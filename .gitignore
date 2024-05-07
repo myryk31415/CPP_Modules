@@ -13,6 +13,7 @@ weapons
 basicallySed
 harl
 harlfilter
+fixedPointNumbers
 
 # Prerequisites
 *.d

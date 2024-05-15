@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 22:16:36 by padam             #+#    #+#             */
-/*   Updated: 2024/05/03 14:19:31 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/15 14:44:03 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,21 @@ void	Contact::view_full(int index)
 
 void	Contact::view_short(int index)
 {
-	std::cout << std::string(9, 'x') << index << "|";
+	std::cout << std::string(9, ' ') << index << "|";
 	if (this->first_name_.length() > 10)
 		std::cout << this->first_name_.substr(0, 9) << ".";
 	else
-		std::cout << std::string(10 - this->first_name_.length(), 'x') << this->first_name_;
+		std::cout << std::string(10 - this->first_name_.length(), ' ') << this->first_name_;
 	std::cout << "|";
 	if (this->last_name_.length() > 10)
 		std::cout << this->last_name_.substr(0, 9) << ".";
 	else
-		std::cout << std::string(10 - this->last_name_.length(), 'x')<< this->last_name_;
+		std::cout << std::string(10 - this->last_name_.length(), ' ')<< this->last_name_;
 	std::cout << "|";
 	if (this->nickname_.length() > 10)
 		std::cout << this->nickname_.substr(0, 9) << ".";
 	else
-		std::cout << std::string(10 - this->nickname_.length(), 'x')<< this->nickname_;
+		std::cout << std::string(10 - this->nickname_.length(), ' ')<< this->nickname_;
 	std::cout << std::endl;
 
 }

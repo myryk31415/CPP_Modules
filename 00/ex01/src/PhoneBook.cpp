@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 22:14:53 by padam             #+#    #+#             */
-/*   Updated: 2024/05/03 14:25:01 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/15 14:41:43 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ void	PhoneBook::searchContacts(void)
 {
 	std::string	input;
 
+	if (this->contact_count_ == 0)
+	{
+		std::cout << "No contacts to search." << std::endl;
+		return;
+	}
 	for (int i = 0; i < this->contact_count_; i++)
 		this->contacts_[i].view_short(i);
 	while (1)

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/07 17:02:49 by padam            ###   ########.fr       */
+/*   Created: 2024/05/07 22:51:23 by padam             #+#    #+#             */
+/*   Updated: 2024/05/08 00:14:55 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Sed.hpp"
+#include "Point.hpp"
 
-int main(int argc, char **argv)
+Point::Point(void) : _x(0), _y(0)
 {
-	Sed	test = Sed(argv[1]);
-	if (argc != 4)
-	{
-		std::cout << "Usage: ./basicallySed [filename] [pattern] [substitute]" << std::endl;
-		return (1);
-	}
-	test.replace(argv[2], argv[3]);
-	return (0);
+	std::cout << "Default constructor called" << std::endl;
 }
+
+Point::Point(float x, float y) : _x(x), _y(y)
+{
+	std::cout << "Float constructor called" << std::endl;
+}
+
+Point::Point(const Point &src) : _x(src._x), _y(src._y)
+{
+	std::cout << "Copy constructor called" << std::endl;
+}
+
+Poin

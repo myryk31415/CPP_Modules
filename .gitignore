@@ -1,7 +1,8 @@
 
 *test*
-.vscode/*
+*.vscode*
 *.log
+*vgcore*
 
 #programs
 megaphone
@@ -12,6 +13,9 @@ reference
 weapons
 basicallySed
 harl
+harlfilter
+fixedPointNumbers
+bsp
 
 # Prerequisites
 *.d

@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sed.hpp                                            :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 01:25:36 by padam             #+#    #+#             */
-/*   Updated: 2024/05/07 17:02:25 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/07 20:28:09 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SED_HPP
-# define SED_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
-#include <fstream>
+#include <cmath>
 
-class	Sed
+class	Fixed
 {
 	private:
-		std::string	_in_file;
-		std::string	_out_file;
+		int					_fixedPointValue;
+		static const int	_fractionalBits = 8;
 	public:
-		Sed(std::string in_file);
-		void	replace(std::string s1, std::string s2);
+		Fixed(void);
+		Fixed(const int value);
+		Fixed(const float value);
+		Fixed(const Fixed &src);
+		Fixed&	operator=(const Fixed &rhs);
+		~Fixed(void);
+
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 };
 
+std::ostream& operator<<(std::ostream &o, Fixed const &ref);
 #endif

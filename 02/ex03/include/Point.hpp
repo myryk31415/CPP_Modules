@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/07 17:02:49 by padam            ###   ########.fr       */
+/*   Created: 2024/05/07 22:49:59 by padam             #+#    #+#             */
+/*   Updated: 2024/05/08 00:09:30 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Sed.hpp"
+#ifndef POINT_HPP
+# define POINT_HPP
 
-int main(int argc, char **argv)
+# include "Fixed.hpp"
+# include <iostream>
+
+class Point
 {
-	Sed	test = Sed(argv[1]);
-	if (argc != 4)
-	{
-		std::cout << "Usage: ./basicallySed [filename] [pattern] [substitute]" << std::endl;
-		return (1);
-	}
-	test.replace(argv[2], argv[3]);
-	return (0);
+	private:
+		const Fixed _x;
+		const Fixed _y;
+	public:
+		Point(void);
+		Point(float x, float y);
+		Point(const Point &src);
+		Point& operator = (const Point &rhs);
+		~Point(void);
+
+
 }
+
+#endif

@@ -6,21 +6,21 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/07 17:02:49 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/06 23:18:59 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Sed.hpp"
+#include "Harl.hpp"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	Sed	test = Sed(argv[1]);
-	if (argc != 4)
+	Harl	harl;
+
+	if (argc != 2)
 	{
-		std::cout << "Usage: ./basicallySed [filename] [pattern] [substitute]" << std::endl;
+		std::cout << "Usage: ./harl [DEBUG|INFO|WARNING|ERROR]" << std::endl;
 		return (1);
 	}
-	test.replace(argv[2], argv[3]);
+	harl.complain(argv[1]);
 	return (0);
 }

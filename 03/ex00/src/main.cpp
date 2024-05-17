@@ -6,20 +6,25 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/07 19:54:42 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/17 20:22:16 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
 int	main(void)
 {
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	ClapTrap	hehe("hehe");
+	ClapTrap	hihihih("hihihih");
+
+	for (int i = 0; i < 12; i++)
+	{
+		hehe.attack("tatatarget");
+	}
+	hehe.beRepaired(21);
+	hihihih.takeDamage(8);
+	hihihih.beRepaired(4);
+	hihihih.takeDamage(5);
+	hihihih.takeDamage(5);
 	return (0);
 }

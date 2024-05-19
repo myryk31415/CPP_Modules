@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/05/17 20:23:45 by padam            ###   ########.fr        #
+#    Updated: 2024/05/19 15:21:40 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -std=c++98 -Wall -Wextra -Werror -I./include
 SRC_PATH = src
 OBJ_PATH = obj
 
-SRCS = main.cpp	ClapTrap.cpp
+SRCS = main.cpp	ClapTrap.cpp ScavTrap.cpp
 OBJ_NAME = $(SRCS:.cpp=.o)
 OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 

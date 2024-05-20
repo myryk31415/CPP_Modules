@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:37:47 by padam             #+#    #+#             */
-/*   Updated: 2024/05/17 20:23:26 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/20 15:55:22 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string	_name;
 		unsigned int	_hit_points;
 		unsigned int	_energy_points;

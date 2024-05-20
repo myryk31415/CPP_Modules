@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:16:41 by padam             #+#    #+#             */
-/*   Updated: 2024/05/20 15:56:26 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/20 23:23:15 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,22 @@ ScavTrap::~ScavTrap(void)
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
 	return ;
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	std::cout << "ScavTrap " << this->_name;
+	if (!this->_energy_points)
+	{
+		std::cout << " has no ernergy left!" << std::endl;
+		return;
+	}
+	std::cout << " attacks " << target;
+	std::cout << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+	this->_energy_points--;
+}
+
+void	ScavTrap::guardGate(void)
+{
+	std::cout << "ScavTrap " << this->_name << " is now in gaslight, gatekeep, girlboss mode" << std::endl;
 }

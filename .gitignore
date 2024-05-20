@@ -17,6 +17,7 @@ harlfilter
 fixedPointNumbers
 bsp
 clapTrap
+scavTrap
 
 # Prerequisites
 *.d

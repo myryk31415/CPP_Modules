@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/20 23:38:51 by padam            ###   ########.fr       */
+/*   Created: 2024/05/19 15:16:51 by padam             #+#    #+#             */
+/*   Updated: 2024/05/20 23:36:09 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main(void)
+# include "ClapTrap.hpp"
+# include <iostream>
+
+class FragTrap: public ClapTrap
 {
-	FragTrap	hehe("hehe");
+	public:
+		FragTrap(std::string name);
+		FragTrap(const FragTrap& other);
+		FragTrap &operator=(const FragTrap &other);
+		~FragTrap();
+		void	attack(const std::string& target);
+		void	highFivesGuys(void);
+};
 
-	for (int i = 0; i < 12; i++)
-	{
-		hehe.attack("tatatarget");
-	}
-	hehe.beRepaired(21);
-	hehe.highFivesGuys();
-	return (0);
-}
+#endif

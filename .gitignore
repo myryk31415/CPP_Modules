@@ -19,6 +19,7 @@ bsp
 clapTrap
 scavTrap
 fragTrap
+diamondTrap
 
 # Prerequisites
 *.d

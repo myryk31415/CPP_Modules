@@ -18,6 +18,7 @@ fixedPointNumbers
 bsp
 clapTrap
 scavTrap
+fragTrap
 
 # Prerequisites
 *.d

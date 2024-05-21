@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:24:07 by padam             #+#    #+#             */
-/*   Updated: 2024/05/05 22:24:25 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/21 22:05:15 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Zombie::Zombie(std::string name) {
 };
 
 Zombie::~Zombie(void) {
-	std::cout << this->name << std::endl;
+	std::cout << this->name << " got destroyed" << std::endl;
 };
 
 void	Zombie::announce(void) {

@@ -1,32 +1,41 @@
 #include "Animal.hpp"
 
 // Default constructor
-Animal::Animal(void)
+Animal::Animal(std::string type) : type(type)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Animal default constructor called" << std::endl;
 	return ;
 }
 
 // Copy constructor
 Animal::Animal(const Animal &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	(void) other;
+	std::cout << "Animal copy constructor called" << std::endl;
+	*this = other;
 	return ;
 }
 
 // Assignment operator overload
 Animal &Animal::operator=(const Animal &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
-	(void) other;
+	std::cout << "Animal assignment operator called" << std::endl;
+	this->type = other.type;
 	return (*this);
 }
 
 // Destructor
 Animal::~Animal(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 	return ;
 }
 
+std::string	Animal::getType(void)
+{
+	return (this->type);
+}
+
+void	Animal::makeSound(void)
+{
+
+}

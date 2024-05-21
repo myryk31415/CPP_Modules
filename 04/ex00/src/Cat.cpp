@@ -1,32 +1,32 @@
 #include "Cat.hpp"
 
 // Default constructor
-Cat::Cat(void)
+Cat::Cat(void) : Animal("Cat")
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Cat Default constructor called" << std::endl;
 	return ;
 }
 
 // Copy constructor
 Cat::Cat(const Cat &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	(void) other;
+	std::cout << "Cat Copy constructor called" << std::endl;
+	*this = other;
 	return ;
 }
 
 // Assignment operator overload
 Cat &Cat::operator=(const Cat &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
-	(void) other;
+	std::cout << "Cat Assignment operator called" << std::endl;
+	this->type = other.type;
 	return (*this);
 }
 
 // Destructor
 Cat::~Cat(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Cat Destructor called" << std::endl;
 	return ;
 }
 

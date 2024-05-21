@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/21 19:00:26 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/21 21:54:04 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ int	main(void)
 {
 	DiamondTrap	hehe("hehe");
 
-	// for (int i = 0; i < 12; i++)
-	// {
-	// 	hehe.attack("tatatarget");
-	// }
-	// hehe.beRepaired(21);
-	// hehe.highFivesGuys();
+	for (int i = 0; i < 12; i++)
+	{
+		hehe.attack("tatatarget");
+	}
+	hehe.beRepaired(21);
+	hehe.highFivesGuys();
+	hehe.whoAmI();
 	return (0);
 }

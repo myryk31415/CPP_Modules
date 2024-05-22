@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/05 22:48:10 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/22 15:19:53 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main( void ) {
 	std::string name;
 
-	std::cout << "Creating zombies on the stack." << std::endl;
+	std::cout << "Creating zombies on the heap." << std::endl;
 	std::cout << "Zombie name: " << std::flush;
 	std::cin >> name;
 	Zombie *zombie = zombieHorde(5, name);

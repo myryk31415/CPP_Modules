@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/26 22:00:38 by padam             #+#    #+#             */
+/*   Updated: 2024/05/26 22:00:39 by padam            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 // Default constructor
@@ -8,7 +20,7 @@ Dog::Dog(void) : Animal("Dog")
 }
 
 // Copy constructor
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : Animal(other)
 {
 	std::cout << "Dog Copy constructor called" << std::endl;
 	*this = other;
@@ -30,3 +42,8 @@ Dog::~Dog(void)
 	return ;
 }
 
+void	Dog::makeSound(void) const
+{
+	std::cout << "Woof Woof" << std::endl;
+	return ;
+}

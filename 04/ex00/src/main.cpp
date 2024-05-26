@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 21:33:55 by padam             #+#    #+#             */
-/*   Updated: 2024/05/26 22:18:13 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/26 22:22:44 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,10 @@ int main()
 	meta->makeSound();
 	wrong->makeSound();
 	wrongCat->makeSound();
+	delete meta;
+	delete j;
+	delete i;
+	delete wrong;
+	delete wrongCat;
 	return 0;
 }

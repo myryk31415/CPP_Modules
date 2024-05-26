@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 02:02:29 by padam             #+#    #+#             */
-/*   Updated: 2024/05/06 16:02:24 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/22 15:33:40 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ void	Harl::complain(std::string level)
 			return;
 		}
 	}
+	std::cout << "I don't know what \"" << level << "\" is" << std::endl;
 }

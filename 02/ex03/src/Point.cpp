@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 22:51:23 by padam             #+#    #+#             */
-/*   Updated: 2024/05/08 00:14:55 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/22 16:26:08 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,18 @@ Point::Point(const Point &src) : _x(src._x), _y(src._y)
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Poin
+Point&	Point::operator=(const Point &rhs)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	if (this != &rhs)
+	{
+		this->_x = rhs._x;
+		this->_y = rhs._y;
+	}
+	return (*this);
+}
+
+Point::~Point(void)
+{
+	std::cout << "Destructor called" << std::endl;
+}

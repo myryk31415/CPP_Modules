@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 21:36:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/07 21:34:53 by padam            ###   ########.fr       */
+/*   Updated: 2024/05/31 15:43:58 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int main( void )
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
+	std::cout << Fixed::min( a, b ) << " is smaller" << std::endl;
+	std::cout << Fixed::max( b, a ) << " is bigger" << std::endl;
+	std::cout << Fixed::min( b, b ) << " is here too" << std::endl;
+	if (a < b)
+		std::cout << a << " is less than " << b << std::endl;
 	std::cout << Fixed::max(a, b) << std::endl;
 	return 0;
 }

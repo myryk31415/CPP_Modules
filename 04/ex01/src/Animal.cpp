@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 22:00:42 by padam             #+#    #+#             */
-/*   Updated: 2024/06/03 15:25:22 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/04 00:02:05 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Animal::Animal(std::string type) : type(type)
 Animal::Animal(const Animal &other)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = other;
+	this->type = other.type;
 	return ;
 }
 

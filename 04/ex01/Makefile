@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/05/26 22:17:43 by padam            ###   ########.fr        #
+#    Updated: 2024/06/04 00:35:14 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -std=c++98 -Wall -Wextra -Werror -I./includes
 SRC_PATH = src
 OBJ_PATH = obj
 
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
 OBJ_NAME = $(SRCS:.cpp=.o)
 OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 

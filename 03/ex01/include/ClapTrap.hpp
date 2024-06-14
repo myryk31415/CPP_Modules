@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:37:47 by padam             #+#    #+#             */
-/*   Updated: 2024/05/20 15:55:22 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/14 15:51:59 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class ClapTrap
 		unsigned int	_energy_points;
 		unsigned int	_attack_damage;
 	public:
+		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap& other);
 		ClapTrap &operator=(const ClapTrap &other);

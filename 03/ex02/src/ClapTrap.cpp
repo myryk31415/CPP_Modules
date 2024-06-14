@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:37:52 by padam             #+#    #+#             */
-/*   Updated: 2024/06/14 16:11:09 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/14 16:20:45 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		std::cout << " dies" << std::endl;
 		this->_hit_points = 0;
+		return;
 	}
 	std::cout  << " takes " << amount << " points of damage" << std::endl;
 	this->_hit_points -= amount;

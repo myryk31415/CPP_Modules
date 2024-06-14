@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:16:41 by padam             #+#    #+#             */
-/*   Updated: 2024/06/14 15:55:53 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/14 16:10:55 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ ScavTrap::ScavTrap() : ClapTrap()
 	return ;
 
 }
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Default ScavTrap constructor called" << std::endl;
+	std::cout << "Name ScavTrap constructor called" << std::endl;
 	this->_hit_points = 100;
 	this->_energy_points = 50;
 	this->_attack_damage = 20;

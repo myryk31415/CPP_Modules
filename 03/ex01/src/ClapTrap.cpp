@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:37:52 by padam             #+#    #+#             */
-/*   Updated: 2024/06/14 15:52:33 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/14 16:10:46 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(void)
 // Name constructor
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "Default ClapTrap constructor called" << std::endl;
+	std::cout << "Name ClapTrap constructor called" << std::endl;
 	this->_name = name;
 	this->_hit_points = 10;
 	this->_energy_points = 10;

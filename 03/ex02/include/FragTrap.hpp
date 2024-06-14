@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:16:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/20 23:36:09 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/14 15:59:23 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class FragTrap: public ClapTrap
 {
 	public:
+		FragTrap();
 		FragTrap(std::string name);
 		FragTrap(const FragTrap& other);
 		FragTrap &operator=(const FragTrap &other);

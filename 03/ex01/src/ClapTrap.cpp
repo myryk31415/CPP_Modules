@@ -6,16 +6,27 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 23:37:52 by padam             #+#    #+#             */
-/*   Updated: 2024/05/19 15:20:27 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/14 16:21:04 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 // Default constructor
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(void)
 {
 	std::cout << "Default ClapTrap constructor called" << std::endl;
+	this->_name = "ClapTrap";
+	this->_hit_points = 10;
+	this->_energy_points = 10;
+	this->_attack_damage = 0;
+	return ;
+}
+
+// Name constructor
+ClapTrap::ClapTrap(std::string name)
+{
+	std::cout << "Name ClapTrap constructor called" << std::endl;
 	this->_name = name;
 	this->_hit_points = 10;
 	this->_energy_points = 10;
@@ -57,6 +68,11 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << " has no ernergy left!" << std::endl;
 		return;
 	}
+	if (!this->_hit_points)
+	{
+		std::cout << " is already dead!" << std::endl;
+		return;
+	}
 	std::cout << " attacks " << target;
 	std::cout << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
 	this->_energy_points--;
@@ -67,6 +83,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (!this->_energy_points)
 	{
 		std::cout << " has no ernergy left!" << std::endl;
+		return;
+	}
+	if (!this->_hit_points)
+	{
+		std::cout << " is already dead!" << std::endl;
 		return;
 	}
 	std::cout << " is repaired by " << amount << " points" << std::endl;
@@ -80,6 +101,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (amount >= this->_hit_points)
 	{
 		std::cout << " dies" << std::endl;
+		this->_hit_points = 0;
+		return;
 	}
 	std::cout  << " takes " << amount << " points of damage" << std::endl;
 	this->_hit_points -= amount;

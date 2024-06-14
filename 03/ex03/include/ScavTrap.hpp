@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:16:51 by padam             #+#    #+#             */
-/*   Updated: 2024/05/21 19:01:08 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/14 16:08:51 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class ScavTrap: virtual public ClapTrap
 {
 	public:
+		ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& other);
 		ScavTrap &operator=(const ScavTrap &other);

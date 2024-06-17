@@ -3,14 +3,14 @@
 // Default constructor
 Ice::Ice(void) : AMateria("ice")
 {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
 // Copy constructor
 Ice::Ice(const Ice &other) : AMateria(other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+//	std::cout << "Copy constructor called" << std::endl;
 	(void)other;
 	return ;
 }
@@ -18,7 +18,7 @@ Ice::Ice(const Ice &other) : AMateria(other)
 // Assignment operator overload
 Ice &Ice::operator=(const Ice &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
+//	std::cout << "Assignment operator called" << std::endl;
 	(void)other;
 	return (*this);
 }
@@ -26,7 +26,7 @@ Ice &Ice::operator=(const Ice &other)
 // Destructor
 Ice::~Ice(void)
 {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 

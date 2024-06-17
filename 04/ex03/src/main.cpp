@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 01:37:07 by padam             #+#    #+#             */
-/*   Updated: 2024/06/18 01:20:37 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/18 01:33:39 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
-	std::cout << "test" << std::endl;
 	me->use(0, *bob);
 	me->use(1, *bob);
 	delete bob;

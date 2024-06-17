@@ -3,14 +3,14 @@
 // Default constructor
 Cure::Cure(void) : AMateria("cure")
 {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
 // Copy constructor
 Cure::Cure(const Cure &other) : AMateria(other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+//	std::cout << "Copy constructor called" << std::endl;
 	(void)other;
 	return ;
 }
@@ -18,7 +18,7 @@ Cure::Cure(const Cure &other) : AMateria(other)
 // Assignment operator overload
 Cure &Cure::operator=(const Cure &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
+//	std::cout << "Assignment operator called" << std::endl;
 	(void)other;
 	return (*this);
 }
@@ -26,7 +26,7 @@ Cure &Cure::operator=(const Cure &other)
 // Destructor
 Cure::~Cure(void)
 {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 

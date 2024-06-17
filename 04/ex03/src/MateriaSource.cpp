@@ -3,7 +3,7 @@
 // Default constructor
 MateriaSource::MateriaSource(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->_materia[i] = 0;
 	return ;
@@ -12,7 +12,7 @@ MateriaSource::MateriaSource(void)
 // Copy constructor
 MateriaSource::MateriaSource(const MateriaSource &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+//	std::cout << "Copy constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (other._materia[i])
@@ -40,7 +40,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 // Destructor
 MateriaSource::~MateriaSource(void)
 {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete this->_materia[i];
 	return ;

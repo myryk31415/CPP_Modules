@@ -3,21 +3,21 @@
 // Default constructor
 AMateria::AMateria(void) : _type("default")
 {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
 // Name constructor
 AMateria::AMateria(std::string const & type) : _type(type)
 {
-	std::cout << "Name constructor called" << std::endl;
+//	std::cout << "Name constructor called" << std::endl;
 	return ;
 }
 
 // Copy constructor
 AMateria::AMateria(const AMateria &other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+//	std::cout << "Copy constructor called" << std::endl;
 	this->_type = other._type;
 	return ;
 }
@@ -25,7 +25,7 @@ AMateria::AMateria(const AMateria &other)
 // Assignment operator overload
 AMateria &AMateria::operator=(const AMateria &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
+//	std::cout << "Assignment operator called" << std::endl;
 	this->_type = other._type;
 	return (*this);
 }
@@ -33,7 +33,7 @@ AMateria &AMateria::operator=(const AMateria &other)
 // Destructor
 AMateria::~AMateria(void)
 {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 	return ;
 }
 

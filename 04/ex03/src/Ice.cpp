@@ -11,6 +11,7 @@ Ice::Ice(void) : AMateria("ice")
 Ice::Ice(const Ice &other) : AMateria(other)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	(void)other;
 	return ;
 }
 
@@ -18,6 +19,7 @@ Ice::Ice(const Ice &other) : AMateria(other)
 Ice &Ice::operator=(const Ice &other)
 {
 	std::cout << "Assignment operator called" << std::endl;
+	(void)other;
 	return (*this);
 }
 

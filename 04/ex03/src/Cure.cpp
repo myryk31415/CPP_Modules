@@ -11,6 +11,7 @@ Cure::Cure(void) : AMateria("cure")
 Cure::Cure(const Cure &other) : AMateria(other)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	(void)other;
 	return ;
 }
 
@@ -18,6 +19,7 @@ Cure::Cure(const Cure &other) : AMateria(other)
 Cure &Cure::operator=(const Cure &other)
 {
 	std::cout << "Assignment operator called" << std::endl;
+	(void)other;
 	return (*this);
 }
 

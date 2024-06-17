@@ -21,6 +21,7 @@ scavTrap
 fragTrap
 diamondTrap
 animals
+inheritance
 
 # Prerequisites
 *.d

@@ -9,7 +9,6 @@ class Character : public ICharacter
 	private:
 		std::string	_name;
 		AMateria	*_materia[4];
-		bool		_slot_status[4];
 	public:
 		Character(void);
 		Character(std::string const & name);

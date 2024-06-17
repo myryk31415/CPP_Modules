@@ -5,7 +5,7 @@ Character::Character(void) : _name("default")
 {
 	std::cout << "Default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->_slot_status[i] = false;
+		this->_materia[i] = 0;
 	return ;
 }
 
@@ -14,7 +14,7 @@ Character::Character(std::string const & name) : _name(name)
 {
 	std::cout << "Name constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->_slot_status[i] = false;
+		this->_materia[i] = 0;
 	return ;
 }
 
@@ -24,9 +24,10 @@ Character::Character(const Character &other)
 	std::cout << "Copy constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		if (other._slot_status[i])
+		if (other._materia[i])
 			this->_materia[i] = other._materia[i]->clone();
-		this->_slot_status[i] = other._slot_status[i];
+		else
+			this->_materia[i] = 0;
 	}
 	return ;
 }
@@ -37,11 +38,11 @@ Character &Character::operator=(const Character &other)
 	std::cout << "Assignment operator called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->_slot_status[i])
-			delete this->_materia[i];
-		if (other._slot_status[i])
+		delete this->_materia[i];
+		if (other._materia[i])
 			this->_materia[i] = other._materia[i]->clone();
-		this->_slot_status[i] = other._slot_status[i];
+		else
+			this->_materia[i] = 0;
 	}
 	return (*this);
 }
@@ -51,10 +52,7 @@ Character::~Character(void)
 {
 	std::cout << "Destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-	{
-		if (this->_slot_status[i])
-			delete this->_materia[i];
-	}
+		delete this->_materia[i];
 	return ;
 }
 
@@ -67,10 +65,9 @@ void Character::equip(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (!this->_slot_status[i])
+		if (!this->_materia[i])
 		{
 			this->_materia[i] = m;
-			this->_slot_status[i] = true;
 			break ;
 		}
 	}
@@ -79,16 +76,16 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	if (idx < 0 || idx >= 4 || !this->_slot_status[idx])
+	if (idx < 0 || idx >= 4)
 		return ;
 	this->_materia[idx] = 0;
-	this->_slot_status[idx] = false;
 	return ;
 }
 
 void Character::use(int idx, ICharacter &target)
 {
-	if (idx < 0 || idx >= 4 || !this->_slot_status[idx])
+	std::cout << "* " << this->_name << " uses ";
+	if (idx < 0 || idx >= 4 || !this->_materia[idx])
 		return ;
 	this->_materia[idx]->use(target);
 	return ;

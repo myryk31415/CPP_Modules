@@ -8,9 +8,11 @@ Brain::Brain(void)
 }
 
 // Copy constructor
-Brain::Brain(const Brain &other) : ideas(other.ideas)
+Brain::Brain(const Brain &other)
 {
 	std::cout << "Brain Copy constructor called" << std::endl;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = other.ideas[i];
 	return ;
 }
 

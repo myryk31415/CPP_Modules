@@ -6,7 +6,7 @@
 /*   By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 22:00:42 by padam             #+#    #+#             */
-/*   Updated: 2024/06/04 00:02:05 by padam            ###   ########.fr       */
+/*   Updated: 2024/06/19 16:20:22 by padam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,4 @@ Animal::~Animal(void)
 std::string	Animal::getType(void) const
 {
 	return (this->type);
-}
-
-void	Animal::makeSound(void) const
-{
-	std::cout << "Animal sound" << std::endl;
-	return ;
 }

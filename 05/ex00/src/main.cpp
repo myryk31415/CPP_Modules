@@ -4,8 +4,22 @@ int	main(void)
 {
 	Bureaucrat testa = Bureaucrat("low", 2);
 	Bureaucrat testb = Bureaucrat("high", 149);
-	Bureaucrat testc = Bureaucrat("too low", -2);
-	Bureaucrat testd = Bureaucrat("too high", 200);
+	try
+	{
+		Bureaucrat testc = Bureaucrat("too low", -2);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Too low\n";
+	}
+	try
+	{
+		Bureaucrat testd = Bureaucrat("too high", 200);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Too high\n";
+	}
 
 	std::cout << testa.get_name() << std::endl;
 	std::cout << testa.get_grade() << std::endl;

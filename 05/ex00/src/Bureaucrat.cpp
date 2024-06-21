@@ -12,7 +12,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	std::cout << "Default constructor called" << std::endl;
 	if (grade < 1 || grade > 150)
-		//throw error
+		throw std::exception();
+	_grade = grade;
 	return ;
 }
 
@@ -52,13 +53,13 @@ int	Bureaucrat::get_grade(void) const
 void Bureaucrat::increment(void)
 {
 	if (_grade == 1)
-		//throw error
+		throw std::exception();
 	_grade--;
 }
 
 void Bureaucrat::decrement(void)
 {
 	if (_grade == 150)
-		//throw error
+		throw std::exception();
 	_grade++;
 }

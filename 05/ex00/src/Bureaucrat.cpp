@@ -1,9 +1,18 @@
 #include "Bureaucrat.hpp"
 
 // Default constructor
-Bureaucrat::Bureaucrat(void)
+Bureaucrat::Bureaucrat(void) : _name("default"), _grade(1)
 {
 	std::cout << "Default constructor called" << std::endl;
+	return ;
+}
+
+// Name constructor
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
+{
+	std::cout << "Default constructor called" << std::endl;
+	if (grade < 1 || grade > 150)
+		//throw error
 	return ;
 }
 
@@ -30,3 +39,26 @@ Bureaucrat::~Bureaucrat(void)
 	return ;
 }
 
+std::string	Bureaucrat::get_name(void) const
+{
+	return _name;
+}
+
+int	Bureaucrat::get_grade(void) const
+{
+	return _grade;
+}
+
+void Bureaucrat::increment(void)
+{
+	if (_grade == 1)
+		//throw error
+	_grade--;
+}
+
+void Bureaucrat::decrement(void)
+{
+	if (_grade == 150)
+		//throw error
+	_grade++;
+}

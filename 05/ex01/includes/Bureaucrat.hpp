@@ -20,5 +20,6 @@ class Bureaucrat
 		void	decrement(void);
 };
 
+std::ostream& operator << (std::ostream &o, Bureaucrat const &ref);
 #endif
 

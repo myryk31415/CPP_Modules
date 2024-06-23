@@ -63,3 +63,9 @@ void Bureaucrat::decrement(void)
 		throw std::exception();
 	_grade++;
 }
+
+std::ostream& operator<<(std::ostream &o, Bureaucrat const &ref)
+{
+	o << ref.get_name() << ", bureaucrat grade " << ref.get_grade() << ".";
+	return (o);
+}

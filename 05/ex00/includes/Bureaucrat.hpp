@@ -2,6 +2,12 @@
 # define BUREAUCRAT_HPP
 # include <iostream>
 # include <exception>
+
+class GradeTooHighException : public std::exception
+{
+
+};
+
 class Bureaucrat
 {
 	private:
@@ -13,6 +19,16 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& other);
 		Bureaucrat &operator=(const Bureaucrat &other);
 		~Bureaucrat();
+
+		class GradeTooHighException : public std::exception
+		{
+			const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			const char *what() const throw();
+		};
 
 		std::string get_name(void) const;
 		int get_grade(void) const;

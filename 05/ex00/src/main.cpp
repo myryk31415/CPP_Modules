@@ -2,23 +2,23 @@
 
 int	main(void)
 {
-	Bureaucrat testa = Bureaucrat("low", 2);
-	Bureaucrat testb = Bureaucrat("high", 149);
+	Bureaucrat testa = Bureaucrat("high", 2);
+	Bureaucrat testb = Bureaucrat("low", 149);
 	try
 	{
-		Bureaucrat testc = Bureaucrat("too low", -2);
+		Bureaucrat testc = Bureaucrat("too high", -2);
 	}
 	catch (std::exception & e)
 	{
-		std::cout << "Too low\n";
+		std::cout << e.what();
 	}
 	try
 	{
-		Bureaucrat testd = Bureaucrat("too high", 200);
+		Bureaucrat testd = Bureaucrat("too low", 200);
 	}
 	catch (std::exception & e)
 	{
-		std::cout << "Too high\n";
+		std::cout << e.what();
 	}
 
 	std::cout << testa.get_name() << std::endl;
@@ -33,6 +33,7 @@ int	main(void)
 	catch (std::exception & e)
 	{
 		std::cout << "HELP1\n";
+		std::cout << e.what();
 	}
 	try
 	{
@@ -41,6 +42,7 @@ int	main(void)
 	catch (std::exception & e)
 	{
 		std::cout << "HELP2\n";
+		std::cout << e.what();
 	}
 	std::cout << testa.get_grade() << std::endl;
 	try
@@ -50,6 +52,7 @@ int	main(void)
 	catch (std::exception & e)
 	{
 		std::cout << "HELP3\n";
+		std::cout << e.what();
 	}
 	try
 	{
@@ -58,6 +61,7 @@ int	main(void)
 	catch (std::exception & e)
 	{
 		std::cout << "HELP4\n";
+		std::cout << e.what();
 	}
 	std::cout << testb.get_grade() << std::endl;
 }

@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/06/22 01:25:25 by padam            ###   ########.fr        #
+#    Updated: 2024/08/28 08:49:01 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -std=c++98 -Wall -Wextra -Werror -I./includes
 SRC_PATH = src
 OBJ_PATH = obj
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 OBJ_NAME = $(SRCS:.cpp=.o)
 OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 

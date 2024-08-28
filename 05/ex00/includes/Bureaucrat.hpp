@@ -3,11 +3,6 @@
 # include <iostream>
 # include <exception>
 
-class GradeTooHighException : public std::exception
-{
-
-};
-
 class Bureaucrat
 {
 	private:

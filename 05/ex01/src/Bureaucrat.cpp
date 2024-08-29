@@ -10,7 +10,7 @@ Bureaucrat::Bureaucrat(void) : _name("default"), _grade(1)
 // Name constructor
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Constructor called" << std::endl;
 	if (grade < 1)
 		throw (GradeTooHighException());
 	if (grade > 150)
@@ -20,10 +20,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 }
 
 // Copy constructor
-Bureaucrat::Bureaucrat(const Bureaucrat &other)
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.get_name()), _grade(other.get_grade())
 {
 	std::cout << "Copy constructor called" << std::endl;
-	(void) other;
 	return ;
 }
 
@@ -31,7 +30,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other)
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	std::cout << "Assignment operator called" << std::endl;
-	(void) other;
+	this->_grade = other.get_grade();
 	return (*this);
 }
 

@@ -63,5 +63,15 @@ int	main(void)
 		std::cout << "HELP4\n";
 		std::cout << e.what();
 	}
+	testa.decrement();
 	std::cout << testb.get_grade() << std::endl;
+	Bureaucrat teste = Bureaucrat(testa);
+	Bureaucrat testf;
+	testf = testa;
+	std::cout << testa.get_name() << std::endl;
+	std::cout << testa.get_grade() << std::endl;
+	std::cout << teste.get_name() << std::endl;
+	std::cout << teste.get_grade() << std::endl;
+	std::cout << testf.get_name() << std::endl;
+	std::cout << testf.get_grade() << std::endl;
 }

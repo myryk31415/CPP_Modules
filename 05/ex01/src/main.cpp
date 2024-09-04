@@ -1,63 +1,30 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
-	Bureaucrat testa = Bureaucrat("low", 2);
-	Bureaucrat testb = Bureaucrat("high", 149);
-	try
-	{
-		Bureaucrat testc = Bureaucrat("too low", -2);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Too low\n";
-	}
-	try
-	{
-		Bureaucrat testd = Bureaucrat("too high", 200);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Too high\n";
-	}
+	Bureaucrat	testa = Bureaucrat("high",10);
+	Bureaucrat	testb = Bureaucrat("low", 100);
+	Form		form0 = Form("NAME", 50, 50);
 
-	std::cout << testa.get_name() << std::endl;
-	std::cout << testa.get_grade() << std::endl;
-	std::cout << testb.get_name() << std::endl;
-	std::cout << testb.get_grade() << std::endl;
-
+	std::cout << form0 << std::endl;
 	try
 	{
-		testa.increment();
+		form0.beSigned(testb);
 	}
-	catch (std::exception & e)
+	catch (std::exception &e)
 	{
-		std::cout << "HELP1\n";
+		std::cout << "catched\n";
 	}
 	try
 	{
-		testa.increment();
+		testb.signForm(form0);
 	}
-	catch (std::exception & e)
+	catch (std::exception &e)
 	{
-		std::cout << "HELP2\n";
+		std::cout << "catched\n";
 	}
-	std::cout << testa.get_grade() << std::endl;
-	try
-	{
-		testb.decrement();
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "HELP3\n";
-	}
-	try
-	{
-		testb.decrement();
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "HELP4\n";
-	}
-	std::cout << testb.get_grade() << std::endl;
+	form0.beSigned(testa);
+	std::cout << form0 << std::endl;
+	return (0);
 }

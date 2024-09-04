@@ -2,6 +2,9 @@
 # define BUREAUCRAT_HPP
 # include <iostream>
 # include <exception>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -14,6 +17,8 @@ class Bureaucrat
 		Bureaucrat(const Bureaucrat& other);
 		Bureaucrat &operator=(const Bureaucrat &other);
 		~Bureaucrat();
+
+		void	signForm(Form form);
 
 		class GradeTooHighException : public std::exception
 		{

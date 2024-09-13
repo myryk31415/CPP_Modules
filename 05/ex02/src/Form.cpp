@@ -1,13 +1,13 @@
 #include "Form.hpp"
 
 // Default constructor
-Form::Form(void) : _name("default"), _signed(false), _grade_sign(100), _grade_exec(100)
+Form::Form(void) : _name("default"), _target("default_target"), _signed(false), _grade_sign(100), _grade_exec(100)
 {
 	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
-Form::Form(std::string name, int grade_sign, int grade_exec) : _name(name), _signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
+Form::Form(std::string name, std::string target, int grade_sign, int grade_exec) : _name(name), _target(target), _signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
 	std::cout << "Constructor called" << std::endl;
 	if (grade_sign < 1 || grade_exec < 1)
@@ -40,14 +40,26 @@ Form::~Form(void)
 	return ;
 }
 
-void	Form::beSigned(Bureaucrat crat)
-{
-	int			grade;
+void	Form::execute(Bureaucrat const & executor) {
 	std::string	name;
 
-	grade = crat.get_grade();
+	name = executor.get_name();
+	if (!_signed)
+		throw (NotSignedException());
+	if (executor.get_grade() > _grade_exec)
+	{
+		std::cout << name << " couldn't sign " << _name << " because: 'The Grade is too low!'\n";
+		throw (GradeTooLowException());
+	}
+	cool_name();
+}
+
+void	Form::beSigned(Bureaucrat crat)
+{
+	std::string	name;
+
 	name = crat.get_name();
-	if (grade > _grade_sign)
+	if (crat.get_grade() > _grade_sign)
 	{
 		std::cout << name << " couldn't sign " << _name << " because: 'The Grade is too low!'\n";
 		throw (GradeTooLowException());
@@ -59,6 +71,11 @@ void	Form::beSigned(Bureaucrat crat)
 std::string	Form::get_name() const
 {
 	return (this->_name);
+}
+
+std::string	Form::get_target() const
+{
+	return (this->_target);
 }
 
 bool	Form::is_signed() const
@@ -84,6 +101,11 @@ const char	*Form::GradeTooHighException::what(void) const throw ()
 const char	*Form::GradeTooLowException::what(void) const throw ()
 {
 	return ("The grade is too low!\n");
+}
+
+const char	*Form::NotSignedException::what(void) const throw ()
+{
+	return ("This Form is not signed!\n");
 }
 
 std::ostream& operator<<(std::ostream &o, Form const &ref)

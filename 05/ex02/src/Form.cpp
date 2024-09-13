@@ -47,25 +47,15 @@ void	Form::execute(Bureaucrat const & executor) {
 	if (!_signed)
 		throw (NotSignedException());
 	if (executor.get_grade() > _grade_exec)
-	{
-		std::cout << name << " couldn't sign " << _name << " because: 'The Grade is too low!'\n";
 		throw (GradeTooLowException());
-	}
 	cool_name();
 }
 
 void	Form::beSigned(Bureaucrat crat)
 {
-	std::string	name;
-
-	name = crat.get_name();
 	if (crat.get_grade() > _grade_sign)
-	{
-		std::cout << name << " couldn't sign " << _name << " because: 'The Grade is too low!'\n";
 		throw (GradeTooLowException());
-	}
 	_signed = true;
-	std::cout << name << " signed " << _name << std::endl;
 }
 
 std::string	Form::get_name() const

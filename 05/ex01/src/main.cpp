@@ -24,7 +24,7 @@ int	main(void)
 	{
 		std::cout << "catched\n";
 	}
-	form0.beSigned(testa);
+	testa.signForm(form0);
 	std::cout << form0 << std::endl;
 	return (0);
 }

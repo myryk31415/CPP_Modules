@@ -41,9 +41,20 @@ Bureaucrat::~Bureaucrat(void)
 	return ;
 }
 
-void	Bureaucrat::signForm(Form form)
+void	Bureaucrat::signForm(Form &form)
 {
-	form.beSigned(*this);
+	std::string name;
+
+	name = form.get_name();
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << name << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << _name << " couldn't sign " << name << " because: " << e.what();
+	}
 }
 
 const char	*Bureaucrat::GradeTooHighException::what(void) const throw ()

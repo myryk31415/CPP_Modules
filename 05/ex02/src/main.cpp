@@ -16,25 +16,8 @@ int	main(void)
 	{
 		std::cout << e.what();
 	}
-	std::cout << *form0 << std::endl;
-	try
-	{
-		form0->beSigned(testb);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "catched\n";
-	}
-	try
-	{
-		testb.signForm(*form0);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "catched\n";
-	}
-	form0->beSigned(testa);
-	std::cout << form0 << std::endl;
-	form0->execute(testa);
+	testa.signForm(*form0);
+	testb.executeForm(*form0);
+	testa.executeForm(*form0);
 	return (0);
 }

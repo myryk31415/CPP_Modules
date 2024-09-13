@@ -42,18 +42,9 @@ Form::~Form(void)
 
 void	Form::beSigned(Bureaucrat crat)
 {
-	int			grade;
-	std::string	name;
-
-	grade = crat.get_grade();
-	name = crat.get_name();
-	if (grade > _grade_sign)
-	{
-		std::cout << name << " couldn't sign " << _name << " because: 'The Grade is too low!'\n";
+	if (crat.get_grade() > _grade_sign)
 		throw (GradeTooLowException());
-	}
 	_signed = true;
-	std::cout << name << " signed " << _name << std::endl;
 }
 
 std::string	Form::get_name() const
@@ -93,6 +84,7 @@ std::ostream& operator<<(std::ostream &o, Form const &ref)
 		o << "signed.";
 	else
 		o << "not signed.";
+	o << ref.is_signed();
 	o << std::endl << "grade_sign: " << ref.get_grade_sign();
 	o << ", exec_sign: " << ref.get_grade_exec();
 	return o;

@@ -3,13 +3,13 @@
 // Default constructor
 Form::Form(void) : _name("default"), _target("default_target"), _signed(false), _grade_sign(100), _grade_exec(100)
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
 Form::Form(std::string name, std::string target, int grade_sign, int grade_exec) : _name(name), _target(target), _signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
-	std::cout << "Constructor called" << std::endl;
+	// std::cout << "Constructor called" << std::endl;
 	if (grade_sign < 1 || grade_exec < 1)
 		throw (GradeTooHighException());
 	if (grade_sign > 150 || grade_exec > 150)
@@ -21,14 +21,14 @@ Form::Form(std::string name, std::string target, int grade_sign, int grade_exec)
 Form::Form(const Form &other) : _name(other.get_name()), _signed(other.is_signed()),
 	_grade_sign(other.get_grade_sign()), _grade_exec(other.get_grade_exec())
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	return ;
 }
 
 // Assignment operator overload
 Form &Form::operator=(const Form &other)
 {
-	std::cout << "Assignment operator called" << std::endl;
+	// std::cout << "Assignment operator called" << std::endl;
 	this->_signed = other.is_signed();
 	return (*this);
 }
@@ -36,7 +36,7 @@ Form &Form::operator=(const Form &other)
 // Destructor
 Form::~Form(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
@@ -48,7 +48,7 @@ void	Form::execute(Bureaucrat const & executor) {
 		throw (NotSignedException());
 	if (executor.get_grade() > _grade_exec)
 		throw (GradeTooLowException());
-	cool_name();
+	_execute();
 }
 
 void	Form::beSigned(Bureaucrat crat)

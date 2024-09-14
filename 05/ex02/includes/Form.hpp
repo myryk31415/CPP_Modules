@@ -13,7 +13,7 @@ class Form
 		bool				_signed;
 		const int			_grade_sign;
 		const int			_grade_exec;
-		virtual void		cool_name(void) const = 0;
+		virtual void		_execute(void) const = 0;
 	public:
 		Form(void);
 		Form(std::string name, std::string target, int grade_sign, int grade_exec);

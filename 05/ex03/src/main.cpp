@@ -8,9 +8,9 @@ int	main(void)
 {
 	Bureaucrat				testa = Bureaucrat("high", 1);
 	Bureaucrat				testb = Bureaucrat("low", 150);
-	Form *	form0 = new ShrubberyCreationForm("shrubtarget");
-	Form *	form1 = new RobotomyRequestForm("robotomytarget");
-	Form *	form2 = new PresidentialPardonForm("presidenttarget");
+	AForm *	form0 = new ShrubberyCreationForm("shrubtarget");
+	AForm *	form1 = new RobotomyRequestForm("robotomytarget");
+	AForm *	form2 = new PresidentialPardonForm("presidenttarget");
 
 	testb.executeForm(*form0);
 

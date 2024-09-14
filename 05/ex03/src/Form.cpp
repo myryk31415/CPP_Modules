@@ -1,13 +1,13 @@
 #include "Form.hpp"
 
 // Default constructor
-Form::Form(void) : _name("default"), _target("default_target"), _signed(false), _grade_sign(100), _grade_exec(100)
+AForm::AForm(void) : _name("default"), _target("default_target"), _signed(false), _grade_sign(100), _grade_exec(100)
 {
 	// std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
-Form::Form(std::string name, std::string target, int grade_sign, int grade_exec) : _name(name), _target(target), _signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
+AForm::Form(std::string name, std::string target, int grade_sign, int grade_exec) : _name(name), _target(target), _signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
 	// std::cout << "Constructor called" << std::endl;
 	if (grade_sign < 1 || grade_exec < 1)
@@ -18,7 +18,7 @@ Form::Form(std::string name, std::string target, int grade_sign, int grade_exec)
 }
 
 // Copy constructor
-Form::Form(const Form &other) : _name(other.get_name()), _signed(other.is_signed()),
+AForm::AForm(const AForm &other) : _name(other.get_name()), _signed(other.is_signed()),
 	_grade_sign(other.get_grade_sign()), _grade_exec(other.get_grade_exec())
 {
 	// std::cout << "Copy constructor called" << std::endl;
@@ -26,7 +26,7 @@ Form::Form(const Form &other) : _name(other.get_name()), _signed(other.is_signed
 }
 
 // Assignment operator overload
-Form &Form::operator=(const Form &other)
+AForm &AForm::operator=(const AForm &other)
 {
 	// std::cout << "Assignment operator called" << std::endl;
 	this->_signed = other.is_signed();
@@ -34,13 +34,13 @@ Form &Form::operator=(const Form &other)
 }
 
 // Destructor
-Form::~Form(void)
+AForm::~AForm(void)
 {
 	// std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
-void	Form::execute(Bureaucrat const & executor) {
+void	AForm::execute(Bureaucrat const & executor) {
 	std::string	name;
 
 	name = executor.get_name();
@@ -51,54 +51,54 @@ void	Form::execute(Bureaucrat const & executor) {
 	_execute();
 }
 
-void	Form::beSigned(Bureaucrat crat)
+void	AForm::beSigned(Bureaucrat crat)
 {
 	if (crat.get_grade() > _grade_sign)
 		throw (GradeTooLowException());
 	_signed = true;
 }
 
-std::string	Form::get_name() const
+std::string	AForm::get_name() const
 {
 	return (this->_name);
 }
 
-std::string	Form::get_target() const
+std::string	AForm::get_target() const
 {
 	return (this->_target);
 }
 
-bool	Form::is_signed() const
+bool	AForm::is_signed() const
 {
 	return (this->_signed);
 }
 
-int	Form::get_grade_sign() const
+int	AForm::get_grade_sign() const
 {
 	return (this->_grade_sign);
 }
 
-int	Form::get_grade_exec() const
+int	AForm::get_grade_exec() const
 {
 	return (this->_grade_exec);
 }
 
-const char	*Form::GradeTooHighException::what(void) const throw ()
+const char	*AForm::GradeTooHighException::what(void) const throw ()
 {
 	return ("The grade is too high!\n");
 }
 
-const char	*Form::GradeTooLowException::what(void) const throw ()
+const char	*AForm::GradeTooLowException::what(void) const throw ()
 {
 	return ("The grade is too low!\n");
 }
 
-const char	*Form::NotSignedException::what(void) const throw ()
+const char	*AForm::NotSignedException::what(void) const throw ()
 {
 	return ("This Form is not signed!\n");
 }
 
-std::ostream& operator<<(std::ostream &o, Form const &ref)
+std::ostream& operator<<(std::ostream &o, AForm const &ref)
 {
 	o << "Form " << ref.get_name() << " is ";
 	if (ref.is_signed())

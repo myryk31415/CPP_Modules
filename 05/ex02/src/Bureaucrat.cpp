@@ -41,7 +41,7 @@ Bureaucrat::~Bureaucrat(void)
 	return ;
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	std::string name;
 
@@ -57,7 +57,7 @@ void	Bureaucrat::signForm(Form &form)
 	}
 }
 
-void	Bureaucrat::executeForm(Form &form)
+void	Bureaucrat::executeForm(AForm &form)
 {
 	std::string name;
 

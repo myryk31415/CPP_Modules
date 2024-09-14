@@ -4,7 +4,7 @@
 # include <exception>
 # include "Form.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -18,8 +18,8 @@ class Bureaucrat
 		Bureaucrat &operator=(const Bureaucrat &other);
 		~Bureaucrat();
 
-		void	signForm(Form &form);
-		void	executeForm(Form &form);
+		void	signForm(AForm &form);
+		void	executeForm(AForm &form);
 
 		class GradeTooHighException : public std::exception
 		{

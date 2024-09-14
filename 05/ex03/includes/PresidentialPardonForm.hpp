@@ -3,7 +3,7 @@
 # include <iostream>
 # include "Form.hpp"
 
-class PresidentialPardonForm : public Form
+class PresidentialPardonForm : public AForm
 {
 	private:
 		void	_execute(void) const;

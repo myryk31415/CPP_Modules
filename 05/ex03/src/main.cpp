@@ -1,16 +1,17 @@
 #include "Bureaucrat.hpp"
-// #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int	main(void)
 {
-	Bureaucrat				testa = Bureaucrat("high", 1);
-	Bureaucrat				testb = Bureaucrat("low", 150);
-	AForm *	form0 = new ShrubberyCreationForm("shrubtarget");
-	AForm *	form1 = new RobotomyRequestForm("robotomytarget");
-	AForm *	form2 = new PresidentialPardonForm("presidenttarget");
+	Intern		intern;
+	Bureaucrat	testa = Bureaucrat("high", 1);
+	Bureaucrat	testb = Bureaucrat("low", 150);
+	AForm *		form0 = intern.makeForm("ShrubberyCreationForm", "shrubtarget");
+	AForm *		form1 = intern.makeForm("RobotomyRequestForm", "robotomytarget");
+	AForm *		form2 = intern.makeForm("PresidentialPardonForm", "presidenttarget");
 
 	testb.executeForm(*form0);
 

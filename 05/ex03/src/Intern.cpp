@@ -7,13 +7,6 @@ Intern::Intern(void)
 	return ;
 }
 
-// Input constructor
-Intern::Intern()
-{
-	// std::cout << "Intern Input constructor called" << std::endl;
-	return ;
-}
-
 // Copy constructor
 Intern::Intern(const Intern &other)
 {
@@ -37,3 +30,33 @@ Intern::~Intern(void)
 	return ;
 }
 
+AForm	*createShrubbery(std::string target)
+{
+	std::cout << "Intern creates ShrubberyCreationForm" << std::endl;
+	return (new ShrubberyCreationForm(target));
+}
+
+AForm	*createRobotomy(std::string target)
+{
+	std::cout << "Intern creates RobotomyRequestForm" << std::endl;
+	return (new RobotomyRequestForm(target));
+}
+
+AForm	*createPardon(std::string target)
+{
+	std::cout << "Intern creates PresidentialPardonForm" << std::endl;
+	return (new PresidentialPardonForm(target));
+}
+
+AForm	*Intern::makeForm(std::string type, std::string target)
+{
+	std::string form_types[] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+	AForm* (*fn[])(std::string) = {createShrubbery, createRobotomy, createPardon};
+
+	for (int i = 0; i < 3; i++)
+		if (form_types[i] == type)
+			return fn[i](target);
+
+	std::cout << "No form of type <" << type << "> found\n";
+	return (NULL);
+}

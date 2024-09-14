@@ -7,7 +7,7 @@ AForm::AForm(void) : _name("default"), _target("default_target"), _signed(false)
 	return ;
 }
 
-AForm::Form(std::string name, std::string target, int grade_sign, int grade_exec) : _name(name), _target(target), _signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
+AForm::AForm(std::string name, std::string target, int grade_sign, int grade_exec) : _name(name), _target(target), _signed(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
 	// std::cout << "Constructor called" << std::endl;
 	if (grade_sign < 1 || grade_exec < 1)

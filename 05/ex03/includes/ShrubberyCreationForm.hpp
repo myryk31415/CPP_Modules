@@ -4,7 +4,7 @@
 # include "Form.hpp"
 # include <fstream>
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
 	private:
 		void	_execute(void) const;

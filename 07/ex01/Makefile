@@ -6,11 +6,11 @@
 #    By: padam <padam@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/09/15 20:05:40 by padam            ###   ########.fr        #
+#    Updated: 2024/09/15 20:06:06 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = templates
+NAME = iter
 CC = c++
 CFLAGS = -std=c++11 -Wall -Wextra -Werror -I./include
 

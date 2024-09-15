@@ -25,5 +25,8 @@ int	main(void)
 	for (int i = 0; i < 3; i++)
 		testa.executeForm(*form1);
 
+	delete form0;
+	delete form1;
+	delete form2;
 	return (0);
 }

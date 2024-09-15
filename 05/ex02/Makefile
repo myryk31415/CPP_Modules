@@ -6,7 +6,7 @@
 #    By: padam <padam@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/09/14 07:45:43 by padam            ###   ########.fr        #
+#    Updated: 2024/09/15 18:44:56 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -std=c++98 -Wall -Wextra -Werror -I./includes
 SRC_PATH = src
 OBJ_PATH = obj
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJ_NAME = $(SRCS:.cpp=.o)
 OBJS = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 

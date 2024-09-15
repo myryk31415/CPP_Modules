@@ -2,7 +2,7 @@
 # define BUREAUCRAT_HPP
 # include <iostream>
 # include <exception>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 class AForm;
 

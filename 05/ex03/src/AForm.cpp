@@ -1,4 +1,4 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // Default constructor
 AForm::AForm(void) : _name("default"), _target("default_target"), _signed(false), _grade_sign(100), _grade_exec(100)

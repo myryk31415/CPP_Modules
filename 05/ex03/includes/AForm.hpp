@@ -19,7 +19,7 @@ class AForm
 		AForm(std::string name, std::string target, int grade_sign, int grade_exec);
 		AForm(const AForm& other);
 		AForm &operator=(const AForm &other);
-		~AForm();
+		virtual ~AForm();
 
 		void		beSigned(Bureaucrat crat);
 		void		execute(Bureaucrat const & executor);

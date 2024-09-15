@@ -1,7 +1,7 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 # include <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm
 {

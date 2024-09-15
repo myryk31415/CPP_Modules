@@ -24,6 +24,8 @@ animals
 inheritance
 bureaucrat
 convert
+serialize
+identify
 
 *_shrubbery
 # Prerequisites

@@ -27,8 +27,10 @@ convert
 serialize
 identify
 templates
+array
 
 *_shrubbery
+
 # Prerequisites
 *.d
 

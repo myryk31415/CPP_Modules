@@ -80,6 +80,22 @@ int	main(void)
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
+
+	Span test = Span(3);
+	test.addNumber(34);
+	Span test2 = test;
+
+	test.addNumber(62);
+
+	try
+	{
+		std::cout << test2.shortestSpan() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << test.shortestSpan() << std::endl;
 	return (0);
 }
 

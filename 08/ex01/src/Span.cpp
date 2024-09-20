@@ -29,7 +29,8 @@ Span::Span(const Span &other)
 Span &Span::operator=(const Span &other)
 {
 	// std::cout << "Span Assignment operator called" << std::endl;
-	this->_len = other._len;
+	this->_data = other._data;
+	this->_len = other.get_len();
 	return (*this);
 }
 
@@ -40,7 +41,7 @@ Span::~Span(void)
 	return ;
 }
 
-unsigned int Span::get_len(void)
+unsigned int Span::get_len(void) const
 {
 	return (_len);
 }

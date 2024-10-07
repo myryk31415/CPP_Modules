@@ -5,7 +5,7 @@ int	main(void)
 {
 	Bureaucrat	testa = Bureaucrat("high",10);
 	Bureaucrat	testb = Bureaucrat("low", 100);
-	Form		form0 = Form("NAME", 50, 50);
+	Form		form0 = Form("NAME", 51, 49);
 
 	std::cout << form0 << std::endl;
 	try
@@ -14,7 +14,7 @@ int	main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "catched\n";
+		std::cout << "catched: " << e.what();
 	}
 	try
 	{

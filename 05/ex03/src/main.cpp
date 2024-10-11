@@ -14,9 +14,7 @@ int	main(void)
 	AForm *		form2 = intern.makeForm("PresidentialPardonForm", "presidenttarget");
 	AForm *		form3 = intern.makeForm("notaform", "presidenttarget");
 
-	(void)form3;
-
-	testb.executeForm(*form0);
+	(void)form3;	testb.executeForm(*form0);
 
 	testa.signForm(*form0);
 	testa.signForm(*form1);

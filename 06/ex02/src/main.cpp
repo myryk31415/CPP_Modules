@@ -69,12 +69,14 @@ int	main(void)
 {
 	std::srand(std::time(NULL));
 
-	for (size_t i = 0; i < 5; i++)
+	for (size_t i = 5; i > 0; i--)
 	{
 		Base *random = generate();
 		identify(random);
 		identify(&*random);
 		delete random;
+		if (i > 1)
+			std::cout << "====================" << std::endl;
 	}
 	return (0);
 }

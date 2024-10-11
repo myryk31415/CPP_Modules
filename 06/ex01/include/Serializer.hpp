@@ -7,7 +7,7 @@
 class Serializer
 {
 	public:
-		Serializer(void);
+		Serializer(void) = delete;
 		Serializer(const Serializer& other);
 		Serializer &operator=(const Serializer &other);
 		~Serializer();

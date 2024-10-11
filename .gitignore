@@ -27,6 +27,7 @@ convert
 serialize
 identify
 templates
+iter
 array
 easyfind
 span

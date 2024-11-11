@@ -27,9 +27,11 @@ convert
 serialize
 identify
 templates
+iter
 array
 easyfind
 span
+mutantStack
 btc
 RPN
 

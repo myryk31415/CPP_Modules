@@ -84,7 +84,6 @@ std::ostream& operator<<(std::ostream &o, Form const &ref)
 		o << "signed.";
 	else
 		o << "not signed.";
-	o << ref.is_signed();
 	o << std::endl << "grade_sign: " << ref.get_grade_sign();
 	o << ", exec_sign: " << ref.get_grade_exec();
 	return o;

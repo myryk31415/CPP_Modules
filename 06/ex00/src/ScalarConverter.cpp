@@ -99,7 +99,17 @@ void	ScalarConverter::char_convert(std::string arg)
 
 void	ScalarConverter::int_convert(std::string arg)
 {
-	int i = std::stoi(arg);
+	int i;
+
+	try
+	{
+		i = std::stoi(arg);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+		return ;
+	}
 
 	std::cout << "char: ";
 	if (i > 127 || i < 0)
@@ -115,7 +125,16 @@ void	ScalarConverter::int_convert(std::string arg)
 
 void	ScalarConverter::float_convert(std::string arg)
 {
-	float f = std::stof(arg);
+	float f;
+	try
+	{
+		f = std::stof(arg);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+		return ;
+	}
 
 	std::cout << "char: ";
 	if (std::truncf(f) != f || f > 127 || f < 0)
@@ -135,7 +154,17 @@ void	ScalarConverter::float_convert(std::string arg)
 
 void	ScalarConverter::double_convert(std::string arg)
 {
-	double fl = std::stod(arg);
+	double fl;
+
+	try
+	{
+		fl = std::stod(arg);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+		return ;
+	}
 
 	std::cout << "char: ";
 	if (std::truncf(fl) != fl || fl > 127 || fl < 0)

@@ -23,8 +23,10 @@ int	main(void)
 
 	std::cout << testa.get_name() << std::endl;
 	std::cout << testa.get_grade() << std::endl;
+	std::cout << testa << std::endl;
 	std::cout << testb.get_name() << std::endl;
 	std::cout << testb.get_grade() << std::endl;
+	std::cout << testa << std::endl;
 
 	try
 	{

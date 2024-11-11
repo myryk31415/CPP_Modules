@@ -1,12 +1,5 @@
 #include "Serializer.hpp"
 
-// Default constructor
-Serializer::Serializer(void)
-{
-	// std::cout << "Serializer Default constructor called" << std::endl;
-	return ;
-}
-
 // Copy constructor
 Serializer::Serializer(const Serializer &other)
 {

@@ -1,5 +1,4 @@
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#pragma once
 # include <iostream>
 # include <algorithm>
 
@@ -21,7 +20,3 @@ template <typename T> typename T::iterator easyfind(T &haystack, int needle)
 		throw(NotFoundException());
 	return (result);
 }
-
-
-#endif
-

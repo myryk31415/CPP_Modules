@@ -10,5 +10,15 @@ int	main(int argc, char **argv)
 	}
 	(void)argv;
 
-	BitcoinExchange tmp("./data.csv");
+	BitcoinExchange tmp;
+
+	try
+	{
+		tmp.read_database("data.csv");
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+		return 1;
+	}
 }

@@ -62,6 +62,21 @@ void	BitcoinExchange::read_database(std::string path)
 		price_history[date] = stod(value);
 	}
 }
+void	BitcoinExchange::handle_line(std::string line)
+{
+	size_t separator = line.find_first_of('|');
+
+	if (separator == std::string::npos)
+		throw (std::runtime_error("Incorrect format => " + line));
+
+	std::string date = line.substr(0, separator - 1);
+	std::string value = line.substr(separator + 2);
+	if (validate_date(date))
+		throw (std::runtime_error("bad input => " + date));
+	if (validate_number(value))
+		throw (std::runtime_error("bad number => " + value));
+	std::cout << date << " => " << value << " | " << price_history[date] * stod(value) << std::endl;
+}
 
 void	BitcoinExchange::read_input(std::string path)
 {
@@ -73,18 +88,14 @@ void	BitcoinExchange::read_input(std::string path)
 	getline(file,line);
 	while (getline(file,line))
 	{
-		size_t comma = line.find_first_of(',');
-
-		if (comma == std::string::npos)
-			throw (std::runtime_error("Incorrect database format"));
-
-		std::string date = line.substr(0, comma);
-		std::string value = line.substr(comma + 1);
-		if (validate_date(date))
-			throw (std::runtime_error("Incorrect database format"));
-		if (validate_number(value))
-			throw (std::runtime_error("Incorrect database format"));
-		price_history[date] = stod(value);
+		try
+		{
+			handle_line(line);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Error: " << e.what() << std::endl;
+		}
 	}
 }
 

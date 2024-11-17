@@ -65,6 +65,7 @@ void	BitcoinExchange::read_database(std::string path)
 void	BitcoinExchange::handle_line(std::string line)
 {
 	size_t separator = line.find_first_of('|');
+	std::map<std::string,double>::iterator rate;
 
 	if (separator == std::string::npos)
 		throw (std::runtime_error("Incorrect format => " + line));
@@ -75,7 +76,16 @@ void	BitcoinExchange::handle_line(std::string line)
 		throw (std::runtime_error("bad input => " + date));
 	if (validate_number(value))
 		throw (std::runtime_error("bad number => " + value));
-	std::cout << date << " => " << value << " | " << price_history[date] * stod(value) << std::endl;
+	rate = price_history.upper_bound(date);
+	// if (rate == price_history.begin())
+	// {
+	// 	rate = price_history.lower_bound(date);
+	// 	if (rate == price_history.end())
+	// 		throw (std::runtime_error("No rates found"));
+	// }
+	std::cout << "date : <" << date << ">, " << "lower bound: <" << price_history.lower_bound(date)->first << ">, upper bound: <" << price_history.upper_bound(date)->first << ">" << std::endl;
+	// std::cout << rate->first << " => " << rate->second << std::endl;
+	// std::cout << date << " => " << value << " | " << rate->second * stod(value) << std::endl;
 }
 
 void	BitcoinExchange::read_input(std::string path)

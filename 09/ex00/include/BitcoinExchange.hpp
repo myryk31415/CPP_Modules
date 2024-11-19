@@ -19,7 +19,7 @@ class BitcoinExchange
 		void	read_database(std::string path);
 		void	read_input(std::string path);
 		int		validate_date(std::string date);
-		int		validate_number(std::string value);
+		int		validate_number(std::string value, bool below_thousand = false);
 		void	handle_line(std::string line);
 };
 

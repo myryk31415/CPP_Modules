@@ -8,7 +8,7 @@
 class BitcoinExchange
 {
 	private:
-		std::map<std::string, float> price_history;
+		std::map<std::string, double> price_history;
 	public:
 		BitcoinExchange(void);
 		BitcoinExchange(std::string path);
@@ -17,7 +17,10 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 		void	read_database(std::string path);
+		void	read_input(std::string path);
 		int		validate_date(std::string date);
+		int		validate_number(std::string value, bool below_thousand = false);
+		void	handle_line(std::string line);
 };
 
 #endif

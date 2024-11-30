@@ -25,9 +25,33 @@ class PMergeMe
 		auto	merge_insertion(T &container)
 		{
 			auto start = std::chrono::high_resolution_clock::now();
-			//todo!();
-			(void)container;
+			T<pair<int, int>>	pairs;
+			int					oddoneout;
+
+			if (container.size() % 2)
+			{
+				oddoneout = container.back();
+				container.pop_back();
+			}
+			pairs = create_pairs(container);
+			for (auto &pair : pairs)
+			{
+				if (pair.first > pair.second)
+					std::swap(pair.first, pair.second);
+				std::cout << pair.first << " " << pair.second << std::endl;
+			}
+			container = container;
 			return (std::chrono::high_resolution_clock::now() - start);
+		}
+
+		template <typename T>
+		auto	create_pairs(T &container)
+		{
+			T<std::pair<int, int>>	pairs;
+
+			for (int i = 1; i < container.size(); i += 2)
+				pairs.push_back(std::make_pair(container[i - 1], container[i]));
+			return (pairs);
 		}
 };
 

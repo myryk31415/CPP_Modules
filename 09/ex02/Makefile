@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: padam <padam@student.42heilbronn.com>      +#+  +:+       +#+         #
+#    By: padam <padam@student.42heilbronn.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 15:34:56 by padam             #+#    #+#              #
-#    Updated: 2024/11/30 14:28:10 by padam            ###   ########.fr        #
+#    Updated: 2024/12/05 12:48:41 by padam            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 CC = c++
-CFLAGS = -std=c++17 -Wall -Wextra -Werror -I./include
+CFLAGS = -std=c++17 -g3 -Wall -Wextra -Werror -I./include
 
 SRC_PATH = src
 OBJ_PATH = obj

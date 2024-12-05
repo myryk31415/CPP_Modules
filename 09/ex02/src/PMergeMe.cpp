@@ -84,7 +84,7 @@ void	PMergeMe::sort(void)
 	" elements with std::deque : " << deque_time.count() << " us" << std::endl;
 }
 
-int	PMergeMe::get_jakobs_diff(int n)
+size_t	PMergeMe::get_jakobs_diff(int n)
 {
 	return (((1 << n) + (n % 2 ? 1 : -1)) * 2 / 3);
 }

@@ -21,6 +21,7 @@ class PMergeMe
 		int		validate_number(char *arg);
 		void	sort(void);
 	private:
+		int		get_jakobs_diff(int n);
 		std::vector<int>	vector;
 		std::deque<int>		deque;
 
@@ -51,11 +52,14 @@ class PMergeMe
 		void	ford_johnson(T &container, P &pairs)
 		{
 			T	sorted;
-			int	jakobsthal = 0;
+			int	count = 0;
 
 			while(!pairs.empty())
 			{
-				jakobsthal = get_next_jakobsth(jakobsthal);
+				int jakobdiff = get_jakobs_diff(count++);
+				(void)jakobdiff;
+
+				pairs.erase(pairs.end());
 			}
 			container = sorted;
 		}
@@ -63,7 +67,7 @@ class PMergeMe
 		template <typename T>
 		void	binary_insertion(T &container, int element, size_t start, size_t end)
 		{
-			if (start = end)
+			if (start == end)
 			{
 				if (container[start] > element)
 					container.insert(start, element);
@@ -120,8 +124,8 @@ class PMergeMe
 			pairs = tmp;
 		}
 
-		template <typename P, typename P>
-		void	create_pairs(P &container, P &pairs)
+		template <typename T, typename P>
+		void	create_pairs(T &container, P &pairs)
 		{
 			for (size_t i = 1; i < container.size(); i += 2)
 				pairs.push_back(std::make_pair(container[i - 1], container[i]));

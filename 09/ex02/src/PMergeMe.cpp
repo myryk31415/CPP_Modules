@@ -70,8 +70,8 @@ void	PMergeMe::sort(void)
 		std::cout << number << " ";
 	std::cout << std::endl;
 
-	auto vector_time = merge_insertion(vector);
-	auto deque_time = merge_insertion(deque);
+	auto vector_time = merge_insertion<std::vector<int>, std::vector<std::pair<int, int>>>(vector);
+	auto deque_time = merge_insertion<std::deque<int>, std::deque<std::pair<int, int>>>(deque);
 
 	std::cout << "After:\t";
 	for (int number : vector)

@@ -49,9 +49,8 @@ void	PMergeMe::get_input(char **argv)
 
 int		PMergeMe::validate_number(char *arg)
 {
-	int ret = std::stoi(arg);
-	if (ret <= 0)
-		throw(std::runtime_error("Not a positive number!"));
+	char *tmp = arg;
+
 	if (arg[0] == '-' || arg[0] == '+')
 		arg++;
 	while (*arg)
@@ -60,6 +59,9 @@ int		PMergeMe::validate_number(char *arg)
 			throw(std::runtime_error("Not a number!"));
 		arg++;
 	}
+	int ret = std::stoi(tmp);
+	if (ret <= 0)
+		throw(std::runtime_error("Not a positive number!"));
 	return (ret);
 }
 
